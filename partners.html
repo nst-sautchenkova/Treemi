@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Treemi.oi</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+
+    <link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-a.css" /> 
+    
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+</head>
+	<body>
+       <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <div id="nav-pages">
+            <a href="index.html">1</a>
+            <a href="instruction.html">2</a>
+            <a href="banner.html">3</a>
+            <a href="contacts.html">4</a>
+            <a href="feedback.html">5</a>
+            <a href="dashboard.html">6</a>
+            <a href="open-deposit.html">7</a>
+            <a href="partners.html">8</a>
+            <a href="setting.html">9</a>
+            <a href="withdraw.html">10</a>
+        </div>
+        <style>
+			#nav-pages{
+				position: fixed;
+				height: 100vh;
+				z-index: 9999;
+				background: rgba(255, 255, 255, 0.2);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				overflow-y: auto;
+				padding: 0 5px 5px;
+			}
+			#nav-pages a{
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				padding: 5px;
+				background: rgba(0, 0, 0, 0.4);
+				text-align: center;
+				width: 30px;
+				margin-top: 5px;
+			}
+			#nav-pages a:hover{
+				background: rgba(0, 0, 0, 0.8);
+			}
+		</style>
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+       <div id="loader">
+            <div id="cube-loader">
+                <div class="img"><img src="img/loading.gif" alt=""/></div>
+           </div>
+        </div><!--/Loader-->
+        
+        <div id="main" class="inside-page admin-page settings-page">
+            <div id="wrapper">
+                <header>
+                    <div class="container">
+                        <div class="top">
+                            <div class="flex-top flex">
+                                <div class="item select-block">
+                                    <div class="logo"><a href="#"><img src="img/logo.png" alt="Treemi.oi"/></a></div>
+                                    <div id="dep-block-language" class="b-selectblock ru">
+                                        <div id="selectblock-language" class="selectblock">                            
+                                            <div id="selectBox-language" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>Русский</span>
+                                                </p>
+                                                <ul id="selectMenuBox-language" class="selectMenuBox">
+                                                    <li class="option" id="ru">Русский</li>
+                                                    <li class="option" id="en">English</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightlanguage = $('#selectBox-language').height();
+                                            var rotateDefaultlanguage = "rotate(0deg)";
+                                                $('#selectBox-language > p.valueTag').click(function() {
+												  var currentHeightlanguage = $('#selectBox-language').height();
+                                                  if (currentHeightlanguage < 200 || currentHeightlanguage == selectDefaultHeightlanguage) {
+                                                      $('#selectBox-language').height("115px");
+                                                      $('#selectBox-language img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-language').addClass('open');
+                                                  }
+                                                  if (currentHeightlanguage >= 115) {
+                                                    $('#selectBox-language').height(selectDefaultHeightlanguage);
+                                                    $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+													$('#selectBox-language').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-language li.option').click(function() {
+                                                $('#dep-block-language').removeClass();
+                                                $('#selectblock-language').removeClass();
+                                                $('#selectBox-language').height(selectDefaultHeightlanguage);
+												$('#selectBox-language p.valueTag span').text($(this).text());
+                                                $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+                                                
+                                                var clalanguage=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-language').addClass(clalanguage);
+                                                $('#selectblock-language').addClass(clalanguage);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                    <div id="dep-block-val" class="b-selectblock">
+                                        <div id="selectblock-val" class="selectblock">                            
+                                            <div id="selectBox-val" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>USD</span>
+                                                </p>
+                                                <ul id="selectMenuBox-val" class="selectMenuBox">
+                                                    <li class="option" id="USD">USD</li>
+                                                    <li class="option" id="btn">btn</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightval = $('#selectBox-val').height();
+                                            var rotateDefaultval = "rotate(0deg)";
+                                                $('#selectBox-val > p.valueTag').click(function() {
+												  var currentHeightval = $('#selectBox-val').height();
+                                                  if (currentHeightval < 200 || currentHeightval == selectDefaultHeightval) {
+                                                      $('#selectBox-val').height("115px");
+                                                      $('#selectBox-val img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-val').addClass('open');
+                                                  }
+                                                  if (currentHeightval >= 115) {
+                                                    $('#selectBox-val').height(selectDefaultHeightval);
+                                                    $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+													$('#selectBox-val').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-val li.option').click(function() {
+                                                $('#dep-block-val').removeClass();
+                                                $('#selectblock-val').removeClass();
+                                                $('#selectBox-val').height(selectDefaultHeightval);
+												$('#selectBox-val p.valueTag span').text($(this).text());
+                                                $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+                                                
+                                                var clalval=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-val').addClass(claval);
+                                                $('#selectblock-val').addClass(claval);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                </div><!--/ item-->
+                                <nav id="menu">
+                                    <div class="cd-nav-trigger">
+                                        <div class="hamburger-menu">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>     
+                                        </ul>
+                                        <div class="admin-menu">
+                                            <ul>
+                                                <li><a href="#"><img src="img/admin/ico/speedometer.png" alt=""/><span>Dashboard</span></a></li>  
+                                                <li><a href="#"><img src="img/admin/ico/money-bag.png" alt=""/><span>Открыть депозит</span></a></li>     
+                                                <li><a href="#"><img src="img/admin/ico/payment-method.png" alt=""/><span>Вывести средства</span></a></li>    
+                                                <li><a href="#"><img src="img/admin/ico/icon.png" alt=""/><span>Партнерство</span></a></li>  
+                                                <li  class="active"><a href="#"><img src="img/admin/ico/settings-work-tool.png" alt=""/><span>Настройки</span></a></li>  
+                                                <!--<li><a href="#"><img src="img/admin/ico/gift.png" alt=""/><span>Получить бонус</span></a></li>--> 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--/ flex-top-->
+                            
+                            <div class="flex-bottom flex">
+                                <div class="social-networks">
+                                    <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                </div><!--/ social-networks-->
+                                <div class="btn-block">
+                                    <div class="btn reg"><span><img src="img/ico/reg.png" alt=""/></span>username_13512@gmail.com</div>
+                                    <a href="#" class="btn inter"><span><img src="img/ico/inter.png" alt=""/></span>Выход</a>
+                                </div>
+                            </div><!--/ flex-bottom-->
+                        </div><!--/ top-->
+                        
+                        <div class="admin-menu">
+                            <ul>
+                                <li><a href="#"><img src="img/admin/ico/speedometer.png" alt=""/><span>Dashboard</span></a></li>  
+                                <li><a href="#"><img src="img/admin/ico/money-bag.png" alt=""/><span>Открыть депозит</span></a></li>     
+                                <li><a href="#"><img src="img/admin/ico/payment-method.png" alt=""/><span>Вывести средства</span></a></li>    
+                                <li class="active"><a href="#"><img src="img/admin/ico/icon.png" alt=""/><span>Партнерство</span></a></li>  
+                                <li><a href="#"><img src="img/admin/ico/settings-work-tool.png" alt=""/><span>Настройки</span></a></li>  
+                                <!--<li><a href="#"><img src="img/admin/ico/gift.png" alt=""/><span>Получить бонус</span></a></li> -->
+                            </ul>
+                        </div><!--/admin-menu-->
+                        
+                        <div id="ps-stat">
+                            <div class="flex">
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/btc.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/eth.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/ltc.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/pm.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/payyer.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/payyer.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                            </div>
+                        </div><!--/ps-stat-->
+                    </div><!--/ container-->
+                </header>
+                
+                <div id="admin-body" class="main">
+                    <article id="partners-page">
+                        <div class="container">
+                            <div class="a-body">
+                                <section class="admin-tab">
+                                    <div class="tab-block">
+                                        <ul class="tabs flex">
+                                            <li class="current">Статистика</li>
+                                            <li>Моя команда</li>
+                                            <li>Рекламные материалы</li>
+                                            <li>Реферальные начисления</li>
+                                        </ul>
+                                        <div class="box visible">
+                                            <div class="top flex">
+                                                <div class="link-block item-form">
+                                                    <label>Ваша реферальная ссылка:</label>
+                                                    <div class="input-form">
+                                                    <textarea id="blink1" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                    <button class="btn" onclick="blink1()">Копировать</button>
+                                                    </div>
+                                                </div><!--/.link-block-->
+                                                <div class="item-form">
+                                                    <label>Вас пригласил:</label>
+                                                    <input type="text" class="input-form" placeholder="Martrang102395"/> 
+                                                </div>
+                                            </div><!--top-->
+                                            <div class="bottom flex">
+                                                <div class="stat">
+                                                	<svg width="158px" height="132px">
+														<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M154.183,51.132 C153.036,50.439 151.596,50.573 150.601,51.468 C147.966,53.831 145.293,56.007 142.529,58.044 C143.137,56.058 143.662,54.106 144.105,52.196 C148.766,49.543 152.497,45.201 154.936,39.569 C157.181,34.386 158.251,28.252 157.947,22.295 C157.879,20.957 156.954,19.848 155.646,19.534 C154.333,19.222 153.000,19.792 152.327,20.958 C150.539,24.056 148.647,26.981 146.618,29.797 C146.604,27.360 146.498,24.996 146.299,22.723 C146.298,22.678 146.299,22.633 146.295,22.587 C145.765,15.564 144.465,8.523 142.432,1.661 C142.069,0.438 140.779,-0.260 139.552,0.101 C138.325,0.462 137.623,1.745 137.985,2.969 C139.280,7.336 140.255,11.779 140.916,16.241 C138.381,13.801 135.768,11.523 133.019,9.361 C131.995,8.556 130.577,8.496 129.487,9.213 C128.399,9.929 127.898,11.251 128.240,12.503 C131.020,22.679 135.666,31.357 141.701,37.691 C141.552,39.630 141.323,41.628 141.016,43.675 C139.330,40.707 137.529,37.873 135.570,35.114 C134.825,34.065 133.493,33.606 132.256,33.968 C131.020,34.331 130.153,35.435 130.099,36.716 C129.795,43.889 130.509,54.358 135.513,64.066 C134.812,65.834 134.023,67.633 133.149,69.455 C132.399,66.148 131.497,62.936 130.423,59.755 C130.014,58.543 128.874,57.721 127.588,57.710 C127.580,57.710 127.572,57.710 127.564,57.710 C126.290,57.710 125.152,58.509 124.727,59.705 C121.407,69.041 120.444,78.786 121.971,87.294 C120.776,88.794 119.488,90.298 118.110,91.798 C118.371,88.408 118.455,85.063 118.362,81.697 C118.326,80.417 117.477,79.299 116.249,78.916 C115.023,78.532 113.688,78.966 112.926,79.994 C106.986,88.015 103.133,97.134 101.995,105.791 C95.819,110.422 92.558,111.651 89.115,112.947 C86.278,114.015 83.382,115.109 78.999,118.018 C74.618,115.109 71.721,114.015 68.884,112.947 C65.442,111.651 62.181,110.422 56.005,105.791 C54.867,97.134 51.014,88.015 45.074,79.994 C44.312,78.966 42.976,78.533 41.751,78.916 C40.522,79.300 39.674,80.417 39.638,81.697 C39.544,85.063 39.628,88.408 39.889,91.798 C38.511,90.298 37.223,88.794 36.029,87.294 C37.555,78.786 36.593,69.041 33.273,59.706 C32.848,58.509 31.710,57.711 30.436,57.711 C30.428,57.711 30.419,57.711 30.411,57.711 C29.125,57.721 27.986,58.543 27.577,59.756 C26.503,62.937 25.601,66.148 24.850,69.455 C23.976,67.633 23.188,65.834 22.487,64.066 C27.490,54.358 28.205,43.889 27.900,36.716 C27.847,35.436 26.980,34.332 25.744,33.969 C24.506,33.606 23.174,34.066 22.429,35.115 C20.471,37.873 18.669,40.707 16.983,43.675 C16.676,41.628 16.447,39.630 16.298,37.692 C22.333,31.357 26.979,22.679 29.759,12.503 C30.101,11.251 29.600,9.929 28.512,9.213 C27.423,8.497 26.004,8.556 24.981,9.361 C22.232,11.524 19.618,13.801 17.083,16.241 C17.744,11.779 18.719,7.336 20.014,2.969 C20.377,1.746 19.675,0.462 18.448,0.101 C17.220,-0.259 15.931,0.439 15.568,1.662 C13.534,8.522 12.234,15.562 11.704,22.586 C11.700,22.635 11.701,22.683 11.700,22.731 C11.501,25.002 11.396,27.363 11.382,29.796 C9.353,26.981 7.461,24.056 5.673,20.957 C5.000,19.792 3.667,19.221 2.354,19.534 C1.045,19.847 0.120,20.957 0.052,22.295 C-0.250,28.251 0.819,34.386 3.064,39.568 C5.503,45.200 9.233,49.543 13.894,52.195 C14.338,54.105 14.863,56.057 15.470,58.044 C12.706,56.007 10.034,53.831 7.399,51.468 C6.403,50.573 4.962,50.438 3.815,51.132 C2.671,51.825 2.128,53.157 2.465,54.446 C5.144,64.707 12.919,75.921 24.375,78.470 C25.353,80.161 26.420,81.867 27.574,83.581 C24.344,82.440 21.155,81.144 17.948,79.662 C16.733,79.101 15.318,79.392 14.427,80.389 C13.537,81.383 13.409,82.813 14.108,83.948 C19.402,92.547 29.386,100.647 40.460,100.647 C41.004,100.647 41.551,100.625 42.099,100.585 C45.161,103.433 48.635,106.227 52.450,108.900 C59.650,114.405 63.510,115.859 67.245,117.265 C69.568,118.140 71.830,118.993 74.961,120.911 C72.564,122.741 69.788,125.036 66.495,127.971 C65.540,128.821 65.459,130.281 66.312,131.231 C66.771,131.741 67.404,132.000 68.040,132.000 C68.591,132.000 69.143,131.806 69.586,131.412 C73.405,128.008 76.458,125.521 78.999,123.650 C81.542,125.521 84.595,128.008 88.414,131.412 C88.857,131.806 89.409,132.000 89.959,132.000 C90.595,132.000 91.229,131.741 91.687,131.231 C92.541,130.281 92.459,128.821 91.505,127.971 C88.212,125.036 85.435,122.741 83.039,120.911 C86.169,118.993 88.431,118.140 90.754,117.265 C94.487,115.859 98.348,114.405 105.542,108.905 C109.360,106.230 112.837,103.434 115.900,100.585 C116.448,100.625 116.995,100.647 117.539,100.647 C128.612,100.647 138.598,92.547 143.891,83.948 C144.590,82.813 144.462,81.383 143.573,80.389 C142.681,79.393 141.266,79.101 140.052,79.662 C136.844,81.145 133.656,82.441 130.425,83.582 C131.579,81.867 132.646,80.162 133.624,78.471 C145.080,75.922 152.854,64.708 155.534,54.446 C155.871,53.156 155.328,51.825 154.183,51.132 ZM145.515,44.909 C145.579,44.501 145.642,44.094 145.700,43.689 C145.736,43.441 145.768,43.196 145.801,42.948 C145.852,42.570 145.902,42.192 145.948,41.816 C145.979,41.564 146.007,41.312 146.035,41.061 C146.077,40.695 146.117,40.329 146.153,39.966 C146.178,39.716 146.202,39.467 146.225,39.219 C146.259,38.856 146.290,38.494 146.318,38.134 C146.328,38.002 146.342,37.867 146.352,37.735 C148.776,34.780 151.010,31.736 153.104,28.536 C152.348,34.816 149.905,41.206 145.428,45.481 C145.459,45.289 145.485,45.101 145.515,44.909 ZM4.896,28.536 C6.990,31.736 9.224,34.780 11.648,37.735 C11.659,37.874 11.673,38.017 11.684,38.157 C11.711,38.504 11.741,38.852 11.773,39.202 C11.797,39.459 11.821,39.718 11.847,39.978 C11.883,40.332 11.922,40.690 11.963,41.047 C11.992,41.305 12.020,41.561 12.052,41.821 C12.097,42.193 12.147,42.567 12.198,42.943 C12.231,43.192 12.263,43.439 12.299,43.689 C12.358,44.100 12.423,44.513 12.487,44.927 C12.516,45.112 12.541,45.295 12.571,45.481 C8.094,41.206 5.651,34.818 4.896,28.536 ZM23.261,42.192 C23.006,47.748 21.970,53.039 20.225,57.718 C20.167,57.537 20.111,57.357 20.055,57.176 C19.957,56.863 19.860,56.551 19.767,56.240 C19.692,55.991 19.620,55.742 19.547,55.493 C19.459,55.187 19.370,54.882 19.286,54.577 C19.216,54.328 19.149,54.080 19.082,53.833 C19.001,53.533 18.922,53.233 18.846,52.935 C18.782,52.688 18.721,52.442 18.660,52.197 C18.587,51.901 18.515,51.605 18.446,51.311 C18.417,51.187 18.389,51.065 18.362,50.941 C19.886,47.875 21.508,44.979 23.261,42.192 ZM16.022,29.289 C16.025,29.024 16.031,28.762 16.037,28.498 C16.044,28.168 16.050,27.839 16.061,27.512 C16.069,27.250 16.080,26.989 16.090,26.728 C16.104,26.406 16.118,26.084 16.135,25.765 C16.149,25.507 16.164,25.252 16.180,24.996 C16.200,24.678 16.222,24.362 16.245,24.048 C16.255,23.914 16.267,23.783 16.277,23.650 C18.669,21.088 21.107,18.715 23.648,16.482 C21.678,21.946 19.100,26.809 16.019,30.886 C16.018,30.691 16.018,30.497 16.018,30.303 C16.018,29.964 16.018,29.625 16.022,29.289 ZM8.935,58.847 C11.874,61.216 14.890,63.401 18.050,65.454 C18.101,65.583 18.156,65.713 18.206,65.841 C18.331,66.155 18.459,66.469 18.588,66.784 C18.687,67.025 18.787,67.265 18.889,67.506 C19.025,67.825 19.163,68.145 19.303,68.466 C19.407,68.704 19.510,68.942 19.617,69.181 C19.766,69.513 19.919,69.848 20.074,70.181 C20.179,70.409 20.282,70.637 20.391,70.865 C20.561,71.228 20.738,71.593 20.915,71.957 C20.998,72.126 21.076,72.294 21.159,72.462 C15.686,69.745 11.502,64.487 8.935,58.847 ZM30.431,66.247 C31.793,71.564 32.333,76.893 32.021,81.884 C31.919,81.735 31.818,81.587 31.717,81.438 C31.529,81.162 31.341,80.886 31.158,80.611 C31.017,80.398 30.878,80.186 30.740,79.974 C30.564,79.705 30.389,79.436 30.217,79.167 C30.081,78.952 29.946,78.737 29.811,78.522 C29.646,78.259 29.482,77.994 29.322,77.731 C29.190,77.514 29.059,77.297 28.930,77.081 C28.775,76.821 28.621,76.561 28.470,76.302 C28.406,76.192 28.344,76.083 28.281,75.973 C28.850,72.617 29.560,69.398 30.431,66.247 ZM21.565,86.255 C25.064,87.659 28.583,88.871 32.196,89.916 C32.281,90.024 32.372,90.132 32.458,90.239 C32.673,90.509 32.891,90.778 33.112,91.048 C33.274,91.247 33.438,91.445 33.604,91.644 C33.832,91.917 34.063,92.189 34.296,92.462 C34.462,92.656 34.628,92.850 34.797,93.045 C35.042,93.326 35.293,93.608 35.545,93.890 C35.708,94.074 35.870,94.258 36.036,94.441 C36.315,94.749 36.600,95.055 36.885,95.363 C37.007,95.494 37.125,95.626 37.248,95.757 C31.208,94.728 25.665,90.904 21.565,86.255 ZM50.088,101.361 C49.822,101.148 49.556,100.935 49.294,100.721 C49.093,100.557 48.895,100.392 48.697,100.227 C48.445,100.018 48.195,99.809 47.949,99.599 C47.750,99.430 47.554,99.261 47.359,99.091 C47.119,98.884 46.881,98.676 46.647,98.468 C46.454,98.297 46.262,98.125 46.072,97.953 C45.843,97.745 45.615,97.538 45.390,97.329 C45.294,97.241 45.200,97.151 45.104,97.062 C44.647,93.670 44.372,90.367 44.276,87.082 C47.168,91.809 49.295,96.793 50.520,101.705 C50.376,101.590 50.232,101.475 50.088,101.361 ZM112.895,97.062 C112.801,97.149 112.708,97.237 112.614,97.324 C112.386,97.535 112.156,97.746 111.923,97.956 C111.735,98.126 111.546,98.296 111.355,98.465 C111.120,98.675 110.881,98.883 110.641,99.091 C110.445,99.261 110.248,99.430 110.050,99.600 C109.807,99.807 109.559,100.013 109.311,100.220 C109.109,100.388 108.906,100.558 108.699,100.726 C108.448,100.931 108.191,101.137 107.935,101.341 C107.784,101.462 107.632,101.583 107.480,101.704 C108.705,96.792 110.832,91.808 113.724,87.082 C113.627,90.367 113.352,93.670 112.895,97.062 ZM127.569,66.247 C128.439,69.398 129.150,72.617 129.718,75.973 C129.656,76.083 129.594,76.192 129.530,76.301 C129.380,76.560 129.226,76.819 129.072,77.078 C128.941,77.297 128.809,77.517 128.675,77.737 C128.517,77.995 128.356,78.255 128.194,78.514 C128.056,78.733 127.918,78.953 127.778,79.174 C127.611,79.436 127.440,79.698 127.269,79.960 C127.126,80.179 126.982,80.400 126.835,80.620 C126.662,80.881 126.485,81.142 126.307,81.403 C126.198,81.563 126.089,81.723 125.978,81.884 C125.666,76.893 126.207,71.564 127.569,66.247 ZM136.435,86.255 C132.334,90.904 126.792,94.729 120.751,95.758 C120.888,95.611 121.020,95.465 121.156,95.318 C121.424,95.029 121.693,94.740 121.956,94.449 C122.130,94.258 122.300,94.065 122.471,93.872 C122.715,93.598 122.960,93.324 123.198,93.050 C123.370,92.852 123.540,92.653 123.710,92.455 C123.940,92.186 124.167,91.917 124.393,91.648 C124.561,91.447 124.726,91.245 124.891,91.044 C125.110,90.778 125.325,90.511 125.538,90.244 C125.625,90.135 125.718,90.025 125.804,89.916 C129.417,88.871 132.935,87.660 136.435,86.255 ZM134.352,16.481 C136.892,18.715 139.331,21.087 141.722,23.650 C141.733,23.788 141.745,23.925 141.755,24.064 C141.778,24.370 141.800,24.678 141.819,24.987 C141.835,25.246 141.850,25.505 141.865,25.766 C141.881,26.086 141.896,26.408 141.909,26.731 C141.920,26.989 141.930,27.247 141.939,27.507 C141.949,27.838 141.956,28.172 141.963,28.507 C141.968,28.765 141.974,29.023 141.977,29.283 C141.981,29.624 141.981,29.968 141.982,30.313 C141.982,30.503 141.983,30.694 141.981,30.885 C138.899,26.809 136.322,21.946 134.352,16.481 ZM134.738,42.192 C136.492,44.978 138.114,47.875 139.638,50.941 C139.609,51.067 139.581,51.193 139.551,51.320 C139.483,51.609 139.413,51.900 139.341,52.190 C139.280,52.439 139.218,52.687 139.153,52.936 C139.076,53.236 138.997,53.536 138.915,53.837 C138.850,54.081 138.784,54.326 138.716,54.572 C138.629,54.884 138.538,55.198 138.446,55.512 C138.377,55.751 138.308,55.989 138.236,56.229 C138.139,56.554 138.036,56.882 137.934,57.209 C137.881,57.379 137.828,57.549 137.775,57.718 C136.029,53.039 134.993,47.748 134.738,42.192 ZM136.841,72.463 C136.922,72.297 136.999,72.132 137.080,71.966 C137.258,71.598 137.438,71.230 137.610,70.864 C137.717,70.639 137.819,70.414 137.922,70.188 C138.078,69.851 138.233,69.514 138.383,69.179 C138.489,68.942 138.591,68.707 138.694,68.472 C138.835,68.148 138.976,67.825 139.112,67.503 C139.212,67.265 139.311,67.028 139.408,66.792 C139.540,66.471 139.670,66.151 139.796,65.833 C139.846,65.707 139.900,65.580 139.949,65.455 C143.109,63.402 146.125,61.216 149.064,58.848 C146.498,64.487 142.313,69.745 136.841,72.463 Z"></path>
+													</svg>
+                                                    <div class="txt">
+                                                        <div class="tit">Ваш статус</div>
+                                                        <div class="title">Новичок</div>
+                                                        <p>Приглашайте партнеров в свою команду что-бы повысить статус!</p>
+                                                    </div>
+                                                </div>
+                                                <div class="r-block">
+                                                    <div class="flex">
+                                                        <div class="item">
+                                                            <div class="img"><img src="img/admin/ico/ico-1.png" alt=""></div>
+                                                            <div class="title">Ваши парнтеры инвестировали</div>
+                                                        </div>
+                                                        <div class="value">$14 854.23</div>
+                                                    </div><!--r-block flex-->
+                                                    <div class="flex">
+                                                        <div class="item">
+                                                            <div class="img"><img src="img/admin/ico/ico-2.png" alt=""></div>
+                                                            <div class="title">Заработано на партнерах</div>
+                                                        </div>
+                                                        <div class="value">$854.23</div>
+                                                    </div><!--r-block flex-->
+                                                    <div class="flex">
+                                                        <div class="item">
+                                                            <div class="img"><img src="img/admin/ico/ico-3.png" alt=""></div>
+                                                            <div class="title">Количество партнеров</div>
+                                                        </div>
+                                                        <div class="value">22</div>
+                                                    </div><!--r-block flex-->
+                                                    <div class="bottom">
+                                                        <div class="item">
+                                                            <div class="num">11</div>
+                                                            <div class="title">Активных</div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="num">11</div>
+                                                            <div class="title">Неактивных</div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="num">19</div>
+                                                            <div class="title">1-го уровня</div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="num">2</div>
+                                                            <div class="title">2-го уровня</div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="num">1</div>
+                                                            <div class="title">3-го уровня</div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--r-block-->
+                                            </div><!--bottom-->
+                                        </div><!--BOX 1-->
+                                        
+                                        <div class="box">
+                                            <div id="ref-nach">
+                                                <div class="tab-block2">
+                                                    <ul class="tabs2 flex">
+                                                        <li class="current">Все</li>
+                                                        <li>1 уровень</li>
+                                                        <li>2 уровень</li>
+                                                        <li>3 уровень</li>
+                                                    </ul>
+                                                    <div class="box2 visible">
+                                                        <div class="table">
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div><!--BOX 1-->
+                                                    <div class="box2">
+                                                        <div class="table">
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div><!--BOX 2-->
+                                                    <div class="box2">
+                                                        <div class="table">
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div><!--BOX 3-->
+                                                    <div class="box2">
+                                                        <div class="table">
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="r-td-name">Alexander Kravets </td>
+                                                                    <td>Email: <span>lex.kravets@gmail.com</span></td>
+                                                                    <td>Активы: <span>$7 5621.23</span></td>
+                                                                    <td>Партнеров: <span>16</span></td>
+                                                                    <td><a href="#" class="btn">ДЕПОЗИТЫ</a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div><!--BOX 4-->
+                                                </div>
+                                            </div>
+                                        </div><!--box2-->
+                                        
+                                        <div class="box">
+                                            <div class="banner-block">
+                                                <div class="item b-728х90">
+                                                    <div class="tit">728х90</div>
+                                                    <div class="img"></div>
+                                                    <div class="link-block">
+                                                        <textarea id="blink1" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                        <button class="btn" onclick="blink1()">Копировать</button>
+                                                    </div><!--/.link-block-->
+                                                </div><!--item-->
+                                                <div class="item b-468х60">
+                                                    <div class="tit">468х60</div>
+                                                    <div class="img"></div>
+                                                    <div class="link-block">
+                                                        <textarea id="blink2" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                        <button class="btn" onclick="blink2()">Копировать</button>
+                                                    </div><!--/.link-block-->
+                                                </div><!--item-->
+                                                <div class="banner-flex">
+                                                    <div class="item b-200х300">
+                                                        <div class="tit">200х300</div>
+                                                        <div class="img"></div>
+                                                        <div class="link-block">
+                                                            <textarea id="blink3" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                            <button class="btn" onclick="blink3()">Копировать</button>
+                                                        </div><!--/.link-block-->
+                                                    </div><!--item-->
+                                                    <div class="item b-125х125">
+                                                        <div class="tit">125х125</div>
+                                                        <div class="img"></div>
+                                                        <div class="link-block">
+                                                            <textarea id="blink4" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                            <button class="btn" onclick="blink4()">Копировать</button>
+                                                        </div><!--/.link-block-->
+                                                    </div><!--item-->
+                                                    <div class="item b-100х100">
+                                                        <div class="tit">100х100</div>
+                                                        <div class="img"></div>
+                                                        <div class="link-block">
+                                                            <textarea id="blink5" >https://www.google.com/search?q=referal&oq=referal&aqs=chrome..69i57j69i60j69i61j0l3.3488j1j7&sourceid=chrome&ie=UTF-8 </textarea>
+                                                            <button class="btn" onclick="blink5()">Копировать</button>
+                                                        </div><!--/.link-block-->
+                                                    </div><!--item-->
+                                                </div>
+                                            </div><!--banner-block-->
+                                        </div><!--box3-->
+                                        
+                                        <div class="box">
+                                           <div class="table">
+                                                <table>
+                                                    <tbody><tr>
+                                                        <th class="th-date">Дата и время</th>
+                                                        <th class="th-ps">П/С</th>
+                                                        <th class="th-num">№ кошелька</th>
+                                                        <th class="th-sum">Сумма:</th>
+                                                        <th class="th-status">Статус:</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status success"><span>Успех</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status error"><span>Ошибка</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status cancel"><span>Отмена</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status success"><span>Успех</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status error"><span>Ошибка</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status cancel"><span>Отмена</span></td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </div>
+                                        </div><!--BOX 2-->
+                                    </div>
+                                </section>
+                            </div><!--/a-body-->
+						</div><!--container-->
+                    </article>
+                    
+                    
+                    <footer>
+                        <div class="ps-block">
+                            <div class="container">
+                                <div class="flex">
+                                    <div class="img"><img src="img/ps/pay-payeer.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-pm.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-nix.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-qiwi.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-btc.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-eth.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-dash.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-ltc.png" alt="" /></div>
+                                </div>
+                            </div><!--container-->
+                        </div><!--ps-block-->
+                        
+                        <div class="scrolltop">
+                        	<div id="toTop"><span class="a-arrow"><img src="img/ico/arrow-white.png" alt=""/></span></div>
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </div>
+                        
+                        <div class="footer-block">
+                            <div class="container">
+                                <div class="top flex">
+                                    <div class="logo"><a href="#"><img src="img/logo-white.png" alt="Treemi.oi"/></a></div>
+                                    <div class="social-networks">
+                                        <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                    </div><!--/ social-networks-->
+                                </div>
+                                <nav id="menu">
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>  
+                                        </ul>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--container-->
+                            <div class="bottom">
+                                <div class="container">
+                                    <div class="flex">
+                                        <div class="copyright">© 2018-2020  Инвестици с Treemi.io</div>
+                                        <div class="other-doc"><a href="#">Политика конфиденциальности</a>      <span>•</span>     <a href="#">Условия сотрудничества</a></div>
+                                    </div>
+                                </div><!--container-->
+                            </div>
+                        </div>
+                    </footer>
+            	</div>
+            </div><!-- End #wrapper --> 
+        </div><!--/Main-->
+       
+       
+       <script>
+			//BANNER JS
+			function blink1() {
+			  var bcopyText = document.getElementById("blink1");
+			  bcopyText.select();
+			  document.execCommand("Copy");
+			}
+			function blink2() {
+			  var bcopyText2 = document.getElementById("blink2");
+			  bcopyText2.select();
+			  document.execCommand("Copy");
+			}
+			function blink3() {
+			  var bcopyText3 = document.getElementById("blink3");
+			  bcopyText3.select();
+			  document.execCommand("Copy");
+			}
+			
+			function blink4() {
+			  var bcopyText4 = document.getElementById("blink4");
+			  bcopyText4.select();
+			  document.execCommand("Copy");
+			}
+			
+			function blink5() {
+			  var bcopyText5 = document.getElementById("blink5");
+			  bcopyText5.select();
+			  document.execCommand("Copy");
+			}
+			var text = jQuery('#blink1').val(),
+				matches = text.match(/\n/g),
+				breaks = matches ? matches.length : 2;
+			
+			jQuery('#blink1').attr('rows',breaks + 2);
+			
+			var text = jQuery('#blink2').val(),
+				matches = text.match(/\n/g),
+				breaks = matches ? matches.length : 2;
+			
+			jQuery('#blink2').attr('rows',breaks + 2);
+			
+			
+			var text = jQuery('#blink3').val(),
+				matches = text.match(/\n/g),
+				breaks = matches ? matches.length : 2;
+			
+			jQuery('#blink3').attr('rows',breaks + 2);
+			
+			
+			var text = jQuery('#blink4').val(),
+				matches = text.match(/\n/g),
+				breaks = matches ? matches.length : 2;
+			
+			jQuery('#blink4').attr('rows',breaks + 2);
+			
+			
+			var text = jQuery('#blink5').val(),
+				matches = text.match(/\n/g),
+				breaks = matches ? matches.length : 2;
+			
+			jQuery('#blink5').attr('rows',breaks + 2);
+        </script>
+	   <script type="text/javascript" src="js/main-a.js"></script>  
+       
+	</body>
+</html>

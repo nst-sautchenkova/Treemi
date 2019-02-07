@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "GothamProBold";
+    src: url("../fonts/GothamPro/GothamProBold.eot");
+    src: url("../fonts/GothamPro/GothamProBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/GothamPro/GothamProBold.woff") format("woff"),
+    url("../fonts/GothamPro/GothamProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "GothamProRegular";
+    src: url("../fonts/GothamPro/GothamProRegular.eot");
+    src: url("../fonts/GothamPro/GothamProRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/GothamPro/GothamProRegular.woff") format("woff"),
+    url("../fonts/GothamPro/GothamProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "GothamProBlack";
+    src: url("../fonts/GothamPro/GothamProBlack.eot");
+    src: url("../fonts/GothamPro/GothamProBlack.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/GothamPro/GothamProBlack.woff") format("woff"),
+    url("../fonts/GothamPro/GothamProBlack.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "GothamProItalic";
+    src: url("../fonts/GothamPro/GothamProItalic.eot");
+    src: url("../fonts/GothamPro/GothamProItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/GothamPro/GothamProItalic.woff") format("woff"),
+    url("../fonts/GothamPro/GothamProItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sommet_rounded_black';
+    src: url('../fonts/SommetRounded/sommet_rounded_black-webfont.woff2') format('woff2'),
+         url('../fonts/SommetRounded/sommet_rounded_black-webfont.woff') format('woff'),
+         url('../fonts/SommetRounded/sommet_rounded_black-webfont.ttf') format('truetype'),
+         url('../fonts/SommetRounded/sommet_rounded_black-webfont.svg#sommet_rounded_blackblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sommet_rounded_bold';
+    src: url('../fonts/SommetRounded/sommet_rounded_bold-webfont.woff2') format('woff2'),
+         url('../fonts/SommetRounded/sommet_rounded_bold-webfont.woff') format('woff'),
+         url('../fonts/SommetRounded/sommet_rounded_bold-webfont.ttf') format('truetype'),
+         url('../fonts/SommetRounded/sommet_rounded_bold-webfont.svg#sommet_rounded_boldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

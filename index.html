@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Treemi.oi</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+    
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/header-slider.js"></script>
+    
+</head>
+	<body>
+       <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <div id="nav-pages">
+            <a href="index.html">1</a>
+            <a href="instruction.html">2</a>
+            <a href="banner.html">3</a>
+            <a href="contacts.html">4</a>
+            <a href="feedback.html">5</a>
+            <a href="dashboard.html">6</a>
+            <a href="open-deposit.html">7</a>
+            <a href="partners.html">8</a>
+            <a href="setting.html">9</a>
+            <a href="withdraw.html">10</a>
+        </div>
+        <style>
+			#nav-pages{
+				position: fixed;
+				height: 100vh;
+				z-index: 9999;
+				background: rgba(255, 255, 255, 0.2);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				overflow-y: auto;
+				padding: 0 5px 5px;
+			}
+			#nav-pages a{
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				padding: 5px;
+				background: rgba(0, 0, 0, 0.4);
+				text-align: center;
+				width: 30px;
+				margin-top: 5px;
+			}
+			#nav-pages a:hover{
+				background: rgba(0, 0, 0, 0.8);
+			}
+		</style>
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+       
+       <div id="loader">
+            <div id="cube-loader">
+                <div class="img"><img src="img/loading.gif" alt=""/></div>
+           </div>
+        </div><!--/Loader-->
+        
+        <div id="main">
+            <div id="wrapper">
+                <header>
+                    <div class="container">
+                        <div class="top">
+                            <div class="flex-top flex">
+                                <div class="item select-block">
+                                    <div class="logo"><a href="#"><img src="img/logo.png" alt="Treemi.oi"/></a></div>
+                                    <div id="dep-block-language" class="b-selectblock ru">
+                                        <div id="selectblock-language" class="selectblock">                            
+                                            <div id="selectBox-language" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>Русский</span>
+                                                </p>
+                                                <ul id="selectMenuBox-language" class="selectMenuBox">
+                                                    <li class="option" id="ru">Русский</li>
+                                                    <li class="option" id="en">English</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightlanguage = $('#selectBox-language').height();
+                                            var rotateDefaultlanguage = "rotate(0deg)";
+                                                $('#selectBox-language > p.valueTag').click(function() {
+												  var currentHeightlanguage = $('#selectBox-language').height();
+                                                  if (currentHeightlanguage < 200 || currentHeightlanguage == selectDefaultHeightlanguage) {
+                                                      $('#selectBox-language').height("115px");
+                                                      $('#selectBox-language img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-language').addClass('open');
+                                                  }
+                                                  if (currentHeightlanguage >= 115) {
+                                                    $('#selectBox-language').height(selectDefaultHeightlanguage);
+                                                    $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+													$('#selectBox-language').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-language li.option').click(function() {
+                                                $('#dep-block-language').removeClass();
+                                                $('#selectblock-language').removeClass();
+                                                $('#selectBox-language').height(selectDefaultHeightlanguage);
+												$('#selectBox-language p.valueTag span').text($(this).text());
+                                                $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+                                                
+                                                var clalanguage=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-language').addClass(clalanguage);
+                                                $('#selectblock-language').addClass(clalanguage);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                    <div id="dep-block-val" class="b-selectblock">
+                                        <div id="selectblock-val" class="selectblock">                            
+                                            <div id="selectBox-val" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>USD</span>
+                                                </p>
+                                                <ul id="selectMenuBox-val" class="selectMenuBox">
+                                                    <li class="option" id="USD">USD</li>
+                                                    <li class="option" id="btn">btn</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightval = $('#selectBox-val').height();
+                                            var rotateDefaultval = "rotate(0deg)";
+                                                $('#selectBox-val > p.valueTag').click(function() {
+												  var currentHeightval = $('#selectBox-val').height();
+                                                  if (currentHeightval < 200 || currentHeightval == selectDefaultHeightval) {
+                                                      $('#selectBox-val').height("115px");
+                                                      $('#selectBox-val img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-val').addClass('open');
+                                                  }
+                                                  if (currentHeightval >= 115) {
+                                                    $('#selectBox-val').height(selectDefaultHeightval);
+                                                    $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+													$('#selectBox-val').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-val li.option').click(function() {
+                                                $('#dep-block-val').removeClass();
+                                                $('#selectblock-val').removeClass();
+                                                $('#selectBox-val').height(selectDefaultHeightval);
+												$('#selectBox-val p.valueTag span').text($(this).text());
+                                                $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+                                                
+                                                var clalval=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-val').addClass(claval);
+                                                $('#selectblock-val').addClass(claval);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                </div><!--/ item-->
+                                <nav id="menu">
+                                    <div class="cd-nav-trigger">
+                                        <div class="hamburger-menu">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>     
+                                        </ul>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--/ flex-top-->
+                            
+                            <div class="flex-bottom flex">
+                                <div class="social-networks">
+                                    <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                </div><!--/ social-networks-->
+                                <div class="btn-block">
+                                    <div id="registration" class="btn reg modal-block"><span><img src="img/ico/reg.png" alt=""/></span>Регистрация</div>
+                                    <div id="inter" class="btn inter modal-block"><span><img src="img/ico/inter.png" alt=""/></span>Вход </div>
+                                </div>
+                            </div><!--/ flex-bottom-->
+                        </div><!--/ top-->
+                    </div><!--/ container-->
+                    
+                    <div class="middle">
+                        <div class="title-block">
+                            <h1>Вырасти свой капитал с treemi<span class="green">.io</span></h1>
+                            <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты</p>
+                        </div>
+                        <div id="header-slider">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Гранатовое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>1$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Granat.png" alt="Item #1">
+                                                    <div class="falling-leaves9 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-granat"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Дерево<br/> Грейпфрута</div>
+                                                <div class="percent">
+                                                    	<span>1$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Grapefruit.png" alt="Item #1">
+                                                    <div class="falling-leaves10 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-grapefruit"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Ананасовое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>1$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Ananas.png" alt="Item #1">
+                                                    <div class="falling-leaves11 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-ananas"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Дерево<br/> Манго</div>
+                                                <div class="percent">
+                                                    	<span>1$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Mango.png" alt="Item #1">
+                                                    <div class="falling-leaves12 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-mango"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                  		<div class="item">
+                                            <div class="slid-body">
+                                                <div class="txt-block">
+                                                    <div class="tit">Яблоня</div>
+                                                    <div class="percent">
+                                                    	<span>1$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                        <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                    </div><!--txt-->
+                                                </div>
+                                                <div class="bottom">
+                                                    <div class="img">
+                                                        <img src="img/trees/Yablona.png" alt="Item #1">
+                                                        <div class="falling-leaves falling-leav"></div>
+                                                    </div>
+                                                    <div class="btn-block">
+                                                        <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-mango"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  
+                                  <div class="swiper-slide">
+                                      <div class="item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Банановое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>5$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Banan.png" alt="Item #1">
+                                                    <div class="falling-leaves2 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-banan"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Апельсиновое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>10$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Apelsin.png" alt="Item #1">
+                                                    <div class="falling-leaves3 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-apelsin"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Лимонное<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>20$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Limon.png" alt="Item #1">
+                                                    <div class="falling-leaves4 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-limon"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Мандариновое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>50$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Mandarin.png" alt="Item #1">
+                                                    <div class="falling-leaves5 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-mandarin"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Грушевое<br/> дерево</div>
+                                                <div class="percent">
+                                                    	<span>100$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Grusha.png" alt="Item #1">
+                                                    <div class="falling-leaves6 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-grusha"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Виноградное дерево</div>
+                                                <div class="percent">
+                                                    	<span>200$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Vinograd.png" alt="Item #1">
+                                                    <div class="falling-leaves7 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-vinograd"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  <div class="swiper-slide">
+                                      <div class="item cloud9-item">
+                                        <div class="slid-body">
+                                            <div class="txt-block">
+                                                <div class="tit">Дерево<br/> Киви</div>
+                                                <div class="percent">
+                                                    	<span>500$</span>
+                                                        <a href="#" class="btn">Посадить</a>
+                                                    </div>
+                                                <div class="txt">
+                                                    <p>Начисления: <span class="bold">через 24 часа</span></p>
+                                                    <p>Сумма депозита: <span class="bold">от 100$ до 1000$</span></p>
+                                                </div><!--txt-->
+                                            </div>
+                                            <div class="bottom">
+                                                <div class="img">
+                                                    <img src="img/trees/Kiwi.png" alt="Item #1">
+                                                    <div class="falling-leaves8 falling-leav"></div>
+                                                </div>
+                                                <div class="btn-block">
+                                                    <div id="tree-modal" class="btn btn-qreen modal-block" data-id="tree-kiwi"><span><img src="img/ico/calculator.png" alt=""/></span>Рассчитать прибыль</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--item-->
+                                  </div><!--End swiper-slide-->
+                                  
+                                </div><!--swiper-wrapper-->
+                            </div><!--swiper-container-->
+                            
+                          <script type="text/javascript" src="js/leaf-animation.js"></script>
+                          <script type="text/javascript" src="js/swiper.min.js"></script>
+                          <script>
+                            var swiper = new Swiper('#header-slider .swiper-container', {
+                              centeredSlides: true,
+                              slidesPerView: 4,
+                              //loop: true,
+                              slideToClickedSlide:true,
+							  initialSlide:4,
+							  breakpoints: {
+								1324: {
+								  slidesPerView: 3,
+								},
+								768: {
+								  slidesPerView: 2,
+								},
+								640: {
+								  slidesPerView: 1,
+								  slideToClickedSlide:false,
+								},
+								320: {
+								  slidesPerView: 1,
+								}
+							  }
+							  
+                            });
+							
+                          </script>
+                        </div><!--/ #header-slider-->
+                    </div><!--/ middle-->
+                    
+                </header>
+                
+                <div class="main">
+                    <article id="first-screen" class="screen gray-screen">
+                        <div class="scroll-block"><a href="#scroll-2" class="scroll"><img src="img/ico/arrow.png" alt=""/></a></div>
+                        <div id="tree-leaf" data-depth='0.3' data-type='parallax'><img src="img/tree-leaf.png"/></div>
+                        <section id="scroll-2" class="anchor-block">
+                            <div class="bg-1"></div>
+                            <div class="container">
+                                <div class="img">
+                                    <img src="img/img-1.png" alt=""/>
+                                </div><!--item-->
+                                <div class="flex">
+                                    <div class="txt fadeEl">
+                                        <h2>О проекте</h2>
+                                        <p><span class="bold">Treemi</span> - международная система взаимного финансирования, в которой люди добровольно взаимодействуют между собой с целью оказывать и получать финансирование от других участников системы.</p>
+                                        <p>Система работает по принципу современной, улучшенной кассы взаимопомощи, надежность которой обеспечивают продуманный маркетинг и высококвалифицированные специалисты.</p>
+                                    </div><!--item-->
+                                </div>
+                            </div><!--container-->
+                            <div class="bg-2"></div>
+                        </section>
+                        <div id="tree-leaf-2" data-depth-top='0.3' data-type='parallaxtop'><img src="img/tree-leaf-2.png"/></div>
+                    </article>
+                    
+                    <article class="screen">
+                        <div class="scroll-block"><a href="#calendar-block" class="scroll"><img src="img/ico/arrow.png" alt=""/></a></div>
+                        <div id="tree-leaf-3" data-depth='0.2' data-type='parallax'><img src="img/tree-leaf-3.png"/></div>
+                        <section id="calendar-block" class="anchor-block">
+                            <div class="container">
+                                <div class="title-block"><h2>Календарь обновлений</h2></div>
+                                <div id="calendar">
+                                    <div class="tit-calendar fadeEl">
+                                        <span class="arrow arrow-left"></span>
+                                        <span class="tit">Декабрь 2018</span>
+                                        <span class="arrow arrow-right"></span>
+                                    </div><!--tit-calendar-->
+                                    <div class="calendar-flex fadeEl">
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">10</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">11</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">12</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">13</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">14</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">15</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">16</div>
+                                                <div class="txt">
+                                                    <p>Рекламная компания</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">17</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">18</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">19</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">20</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">21</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">22</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">23</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">24</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">25</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item">
+                                        	<div class="item-body">
+                                                <div class="num">26</div>
+                                                <div class="txt">
+                                                    <p>Запуск проекта</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item new-year">
+                                        	<div class="item-body">
+                                                <div class="num">27</div>
+                                                <div class="txt">
+                                                    <p>Старт новогодней акции</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item new-year">
+                                        	<div class="item-body">
+                                                <div class="num">28</div>
+                                                <div class="txt">
+                                                    <p>Новогодняя акция</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item new-year">
+                                        	<div class="item-body">
+                                                <div class="num">29</div>
+                                                <div class="txt">
+                                                    <p>Новогодняя акция</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item new-year">
+                                        	<div class="item-body">
+                                                <div class="num">30</div>
+                                                <div class="txt">
+                                                    <p>Новогодняя акция</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item new-year">
+                                        	<div class="item-body">
+                                                <div class="num">31</div>
+                                                <div class="txt">
+                                                    <p>Новогодняя акция</p>
+                                                </div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">1</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                        		<div class="num">2</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">3</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">4</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">5</div>
+                                            </div>
+                                        </div><!--/item-->
+                                        <div class="item gray">
+                                        	<div class="item-body">
+                                            	<div class="num">6</div>
+                                            </div>
+                                        </div><!--/item-->
+                                    </div><!--/calendar-flex-->
+                                </div><!--#calendar-->
+                            </div><!--container-->
+                        </section>
+                    </article>
+                    
+                    <article class="screen gray-screen">
+                        <div class="scroll-block"><a href="#statistics" class="scroll"><img src="img/ico/arrow.png" alt=""/></a></div>
+                        <div id="tree-leaf-2" class="tree-leaf-2-2" data-depth-top='0.3' data-type='parallaxtop'><img src="img/tree-leaf-2.png"/></div>
+                        <section id="statistics" class="anchor-block">
+                            <div class="bg-3"></div>
+                            <div class="container">
+                                <div class="title-block"><h2>Живая статистика</h2></div>
+                                <div class="flex">
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Старт проекта</div>
+                                            <div class="value">15 декабря 2018</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-1.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Инвесторов</div>
+                                            <div class="value">5 692</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-2.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Последний вклад</div>
+                                            <div class="value">500$</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-3.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Всего инвестировано</div>
+                                            <div class="value">16 783$</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-4.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Всего выплачено</div>
+                                            <div class="value">12 5673$</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-5.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="txt">
+                                            <div class="tit">Последняя выплата</div>
+                                            <div class="value">35$</div>
+                                        </div>
+                                        <div class="img"><img src="img/ico/ico-6.png" alt=""/></div>
+                                    </div><!--item-->
+                                </div>
+                            </div><!--container-->
+                            <div class="bg-4"></div>
+                        </section>
+                    </article>
+                    
+                    <article class="screen">
+                        <div class="scroll-block"><a href="#referral-program" class="scroll"><img src="img/ico/arrow.png" alt=""/></a></div>
+                        <div id="tree-leaf-4" data-depth='0.222' data-type='parallax'><img src="img/tree-leaf-3.png"/></div>
+                        <div id="tree-leaf-5" data-depth='0.3' data-type='parallax'><img src="img/tree-leaf.png"/></div>
+                        <div id="tree-leaf-6" data-depth-top="0.1" data-type="parallaxtop"><img src="img/tree-leaf-2.png"></div>
+                        <section id="referral-program" class="anchor-block">
+                            <div class="container">
+                                <div class="title-block">
+                                    <h2>Партнерская программа</h2>
+                                    <p class="fadeEl">Стать партнером Treemi и получать вознаграждение по партнерской программе может абсолютно любой желающий. Для этого нет необходимости инвестиций личных средств. Распространяйте реферальную ссылку, которую найдете после регистрации в личном кабинете и получайте мгновенно 5% прямого бонуса за инвестиции Ваших партнеров по первому уровню, 1% по второму и 1% по третьему.</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="item fadeEl">
+                                        <div class="level">
+                                            <div class="tit">1 уровень</div>
+                                            <div class="percent">2%</div>
+                                        </div>
+                                        <div class="img"><img src="img/img-2.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="level">
+                                            <div class="tit">2 уровень</div>
+                                            <div class="percent">2%</div>
+                                        </div>
+                                        <div class="img"><img src="img/img-3.png" alt=""/></div>
+                                    </div><!--item-->
+                                    <div class="item fadeEl">
+                                        <div class="level">
+                                            <div class="tit">3 уровень</div>
+                                            <div class="percent">8%</div>
+                                        </div>
+                                        <div class="img"><img src="img/img-4.png" alt=""/></div>
+                                    </div><!--item-->
+                                </div>
+                                <div class="btn-block flex">
+                                <a href="#" class="btn"><span><img src="img/ico/give-money.png" alt=""></span>СТАТЬ ПАРТНЕРОМ</a>
+                                <a href="#" class="btn btn-qreen"><span><img src="img/ico/flags.png" alt=""></span>Рекламные банеры</a>
+                                </div>
+                            </div><!--container-->
+                        </section>
+                    </article>
+                    
+                    <article class="screen gray-screen">
+                        <div class="scroll-block"><a href="#faq" class="scroll"><img src="img/ico/arrow.png" alt=""/></a></div>
+                        <section id="faq" class="anchor-block">
+                            <div id="tree-leaf-7" data-depth='0.3' data-type='parallax'><img src="img/tree-leaf.png"/></div>
+                            <div id="tree-leaf-8" data-depth-top="0.1" data-type="parallaxtop"><img src="img/tree-leaf-2.png"></div>
+                            <div class="bg-3"></div>
+                            <div class="container">
+                                <div class="title-block"><h2>Часто задаваемые вопросы</h2></div>
+                                <div class="faq-accordion fadeEl">
+                                    <div class="item show">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                    <div class="item">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                    <div class="item">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                    <div class="item">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                    <div class="item">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                    <div class="item">
+                                        <button class="accordion">
+                                            <div class="title"><h3>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</h3></div> <div class="number"></div>
+                                        </button>
+                                        <div class="panel">
+                                          <div class="panel-txt txt">
+                                            <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+                                          </div>
+                                        </div>
+                                    </div><!--/faq-accordion item-->
+                                </div><!--/faq-accordion-->
+                            </div><!--container-->
+                            <div class="bg-4"></div>
+                        </section>
+                    </article>
+                    
+                    <footer>
+                        <div class="ps-block">
+                            <div class="container">
+                                <div class="flex">
+                                    <div class="img"><img src="img/ps/pay-payeer.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-pm.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-nix.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-qiwi.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-btc.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-eth.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-dash.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-ltc.png" alt="" /></div>
+                                </div>
+                            </div><!--container-->
+                        </div><!--ps-block-->
+                        
+                        <div class="scrolltop">
+                        	<div id="toTop"><span class="a-arrow"><img src="img/ico/arrow-white.png" alt=""/></span></div>
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </div>
+                        
+                        <div class="footer-block">
+                            <div class="container">
+                                <div class="top flex">
+                                    <div class="logo"><a href="#"><img src="img/logo-white.png" alt="Treemi.oi"/></a></div>
+                                    <div class="social-networks">
+                                        <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                    </div><!--/ social-networks-->
+                                </div>
+                                <nav id="menu">
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>  
+                                        </ul>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--container-->
+                            <div class="bottom">
+                                <div class="container">
+                                    <div class="flex">
+                                        <div class="copyright">© 2018-2020  Инвестици с Treemi.io</div>
+                                        <div class="other-doc"><a href="#">Политика конфиденциальности</a>      <span>•</span>     <a href="#">Условия сотрудничества</a></div>
+                                    </div>
+                                </div><!--container-->
+                            </div>
+                        </div>
+                    </footer>
+            	</div>
+            </div><!-- End #wrapper --> 
+        </div><!--/Main-->
+       
+       <!-- MODAL-->
+        <div class="modal" data-id="#tree-modal">
+            <div class="modal-ov"></div>
+            <div class="modal-content">
+                <div class="close"><span><img src="img/ico/close.png" alt=""/></span></div>
+                <div id="profit-calculator" class="tree-dub">
+                    <div class="profit-calculator-flex">
+                        <div class="img">
+                            <img src="img/trees/Ananas.png" alt="" class="ananas-tree"/>
+                            <img src="img/trees/Apelsin.png" alt="" class="apelsin-tree"/>
+                            <img src="img/trees/Banan.png" alt="" class="banan-tree"/>
+                            <img src="img/trees/Granat.png" alt="" class="granat-tree"/>
+                            <img src="img/trees/Grapefruit.png" alt="" class="grapefruit-tree"/>
+                            <img src="img/trees/Grusha.png" alt="" class="grusha-tree"/>
+                            <img src="img/trees/Kiwi.png" alt="" class="kiwi-tree"/>
+                            <img src="img/trees/Limon.png" alt="" class="limon-tree"/>
+                            <img src="img/trees/Mandarin.png" alt="" class="mandarin-tree"/>
+                            <img src="img/trees/Mango.png" alt="" class="mango-tree"/>
+                            <img src="img/trees/Vinograd.png" alt="" class="vinograd-tree"/>
+                            <img src="img/trees/Yablona.png" alt="" class="yablona-tree"/>
+                        </div>
+                        <div class="left-block">
+                        	<div class="tit">Калькулятор  прибыли</div>
+                            <div class="calculator">
+                            	<form action="" method="post">
+                                    <div class="item-form">
+                                        <label>Тип дерева:</label>
+                                        <div id="dep-block-tree" class="b-selectblock">
+                                            <div id="selectblock-tree" class="selectblock">                            
+                                                <div id="selectBox-tree" class="selectBox">
+                                                    <img src="img/ico/arrow-select.png" alt="" class="arrow" />
+                                                    <p class="valueTag" name="select">
+                                                        <span class="ananas-tree sel-tree">Ананасовое дерево</span>
+                                                        <span class="apelsin-tree sel-tree">Апельсиновое дерево</span>
+                                                        <span class="banan-tree sel-tree">Банановое дерево</span>
+                                                        <span class="granat-tree sel-tree">Гранатовое дерево</span>
+                                                        <span class="grapefruit-tree sel-tree">Дерево Грейпфрута</span>
+                                                        <span class="grusha-tree sel-tree">Грушевое дерево</span>
+                                                        <span class="kiwi-tree sel-tree">Дерево Киви</span>
+                                                        <span class="limon-tree sel-tree">Лимонное дерево</span>
+                                                        <span class="mandarin-tree sel-tree">Мандариновое дерево</span>
+                                                        <span class="mango-tree sel-tree">Дерево Манго</span>
+                                                        <span class="vinograd-tree sel-tree">Виноградное дерево</span>
+                                                        <span class="yablona-tree sel-tree">Яблоня</span>
+                                                        <span class="choice"></span>
+                                                    </p>
+                                                    <ul id="selectMenuBox-tree" class="selectMenuBox">
+                                                        <li class="option" id="ananas-tree">Ананасовое дерево</li>
+                                                        <li class="option" id="apelsin-tree">Апельсиновое дерево</li>
+                                                        <li class="option" id="banan-tree">Банановое дерево</li>
+                                                        <li class="option" id="granat-tree">Гранатовое дерево</li>
+                                                        <li class="option" id="grapefruit-tree">Дерево Грейпфрута</li>
+                                                        <li class="option" id="grusha-tree">Грушевое дерево</li>
+                                                        <li class="option" id="kiwi-tree">Дерево Киви</li>
+                                                        <li class="option" id="limon-tree">Лимонное дерево</li>
+                                                        <li class="option" id="mandarin-tree">Мандариновое дерево</li>
+                                                        <li class="option" id="mango-tree">Дерево Манго</li>
+                                                        <li class="option" id="yablona-tree">Виноградное дерево</li>
+                                                        <li class="option" id="el-tree">Яблоня</li>
+                                                    </ul>
+                                                </div><!-- selectBox -->
+                                            </div><!-- #selectblock -->
+                                        </div><!-- .b-selectblock -->
+                                        <script>
+                                            (function( $ ){
+                                              $.fn.selectbox = function() {
+                                                var selectDefaultHeighttree = $('#selectBox-tree').height();
+                                                var rotateDefaulttree = "rotate(0deg)";
+                                                    $('#selectBox-tree > p.valueTag').click(function() {
+                                                      var currentHeighttree = $('#selectBox-tree').height();
+                                                      if (currentHeighttree < 200 || currentHeighttree == selectDefaultHeighttree) {
+                                                          $('#selectBox-tree').height("175px");
+                                                          $('#selectBox-tree img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+                                                      }
+                                                      if (currentHeighttree >= 175) {
+                                                        $('#selectBox-tree').height(selectDefaultHeighttree);
+                                                        $('#selectBox-tree img.arrow').css({transform: rotateDefaulttree});
+                                                      }
+                                                  });
+                                                  
+                                                  $('#selectBox-tree li.option').click(function() {
+                                                    $('#dep-block-tree').removeClass();
+                                                    $('#selectblock-tree').removeClass();
+													$('#profit-calculator').removeClass();
+                                                    $('#selectBox-tree').height(selectDefaultHeighttree);
+                                                    $('#selectBox-tree img.arrow').css({transform: rotateDefaulttree});
+                                                    $('#selectBox-tree p.valueTag span.choice').text($(this).text());
+													$('#selectBox-tree p.valueTag span.sel-tree').addClass('none');
+                                                    
+                                                    var clatree=$(this).attr( 'id' );
+                                                    
+                                                    $('#dep-block-tree').addClass(clatree);
+                                                    $('#selectblock-tree').addClass(clatree);
+													$('#profit-calculator').addClass(clatree);
+                                                  });
+                                              };
+                                            })( jQuery );
+                                            $('selector').selectbox();
+                                        </script>
+                                    </div>
+                                    
+                                    <div id="currency-block">
+                                    	<span id="usd">USD</span>
+                                        <span id="rub">RUB</span>
+                                        <span id="btc">BTC</span>
+                                        <span id="ltc">LTC</span>
+                                        <span id="eth">ETH</span>
+                                        <span id="dash">DASH</span>
+                                    </div>
+                                    <div class="item-2 item-flex">
+                                    	<div class="item-form">
+                                        	<label>Сумма инвестиций:</label>
+                                            <input type="text" class="input-form" id="c-input" placeholder="0"/> 
+                                        </div>
+                                        <div class="item-form">
+                                        	<label>Ваша прибыль:</label>
+                                            <div class="profit-block">
+                                                <span id="profit">0$</span>
+                                            </div>
+                                        </div>
+                                    </div><!--item-form-->
+                                    <button class="btn">
+                                        <span><img src="img/ico/give-money.png" alt=""></span>
+                                        <p>Посадить</p>
+                                    </button>
+                            	</form>
+                            </div><!--calculator-->
+                        </div>
+                    </div>
+                </div><!--profit-calculator-->
+            </div>
+        </div>  
+        
+        
+        <!-- MODAL INTER-->
+        <div class="modal" data-id="#registration">
+            <div class="modal-ov"></div>
+            <div class="modal-content">
+                <div class="close"><span><img src="img/ico/close.png" alt=""/></span></div>
+                <div class="modal-flex">
+                    <div class="img"><img src="img/ico/reg-mod.png" alt=""/></div>
+                    <div class="right-block">
+                    	<div class="title-block"><h2>Регистрация</h2></div>
+                        <div class="form-block">
+                            <form action="" method="post">
+                            	<div class="item-form">
+                                    <label>Придумайте логин</label>
+                                    <input type="text" class="input-form" placeholder="Придумайте логин"/> 
+                                </div>
+                                <div class="item-form">
+                                    <label>Ваш e-mail</label>
+                                    <input type="email" class="input-form" placeholder="alexey.sautchenkov@gmail.com"/> 
+                                </div>
+                                <div class="item-form">
+                                    <label>Придумайте пароль</label>
+                                    <input type="password" class="input-form" placeholder="************"/> 
+                                </div>
+                                <div class="item-form">
+                                    <label>Повторите пароль</label>
+                                    <input type="password" class="input-form" placeholder="************"/> 
+                                </div>
+                                <div class="item-form">
+                                    <label>Придумайте пин-код</label>
+                                    <input type="text" class="input-form" placeholder="4 цифры"/> 
+                                </div>
+                                <div class="item-form">
+                                    <input id="checkbox" name="checkbox" type="checkbox">
+                                    <label for="checkbox">Я согласен с <a href="#">правилами</a></label>
+                                </div>
+                                <div class="btn-block"><button class="btn">Создать аккаунт</button></div>
+                                <div class="txt-ac">
+                                	<p>У вас уже есть акаунт? <a href="#">Войдите</a></p>
+                                </div>
+                        	</form>
+                        </div><!--form-block-->
+                    </div>
+                </div><!--modal-flex-->
+        	</div>
+        </div>
+        
+        <div class="modal" data-id="#inter">
+            <div class="modal-ov"></div>
+            <div class="modal-content">
+                <div class="close"><span><img src="img/ico/close.png" alt=""/></span></div>
+                <div class="modal-flex">
+                    <div class="img"><img src="img/ico/reg-mod.png" alt=""/></div>
+                    <div class="right-block">
+                    	<div class="title-block"><h2>Войти в аккаунт</h2></div>
+                        <div class="form-block">
+                            <form action="" method="post">
+                            	<div class="item-form">
+                                    <label>Ваш e-mail:</label>
+                                    <input type="email" class="input-form" placeholder="alexey.sautchenkov@gmail.com"/> 
+                                </div>
+                                <div class="item-form">
+                                    <label>Ваш пароль:</label>
+                                    <input type="password" class="input-form" placeholder="************"/> 
+                                </div>
+                                <div class="forgot-password">
+                                	<a href="#">Забыли пароль?</a>
+                                </div>
+                                <div class="btn-block"><button class="btn">Войти</button></div>
+                                <div class="txt-ac">
+                                	<p>У вас еще нет аккаута? <a href="#">Зарегистрируйтесь</a></p>
+                                </div>
+                        	</form>
+                        </div><!--form-block-->
+                    </div>
+                </div><!--modal-flex-->
+        	</div>
+        </div>
+	   
+	   
+	   <script type="text/javascript" src="js/main.js"></script>  
+       
+	</body>
+</html>

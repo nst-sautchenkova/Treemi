@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Treemi.oi</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+
+    <link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-a.css" /> 
+    
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+</head>
+	<body>
+       <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <div id="nav-pages">
+            <a href="index.html">1</a>
+            <a href="instruction.html">2</a>
+            <a href="banner.html">3</a>
+            <a href="contacts.html">4</a>
+            <a href="feedback.html">5</a>
+            <a href="dashboard.html">6</a>
+            <a href="open-deposit.html">7</a>
+            <a href="partners.html">8</a>
+            <a href="setting.html">9</a>
+            <a href="withdraw.html">10</a>
+        </div>
+        <style>
+			#nav-pages{
+				position: fixed;
+				height: 100vh;
+				z-index: 9999;
+				background: rgba(255, 255, 255, 0.2);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				overflow-y: auto;
+				padding: 0 5px 5px;
+			}
+			#nav-pages a{
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				padding: 5px;
+				background: rgba(0, 0, 0, 0.4);
+				text-align: center;
+				width: 30px;
+				margin-top: 5px;
+			}
+			#nav-pages a:hover{
+				background: rgba(0, 0, 0, 0.8);
+			}
+		</style>
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!--  NAV PAGES                        -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+       <div id="loader">
+            <div id="cube-loader">
+                <div class="img"><img src="img/loading.gif" alt=""/></div>
+           </div>
+        </div><!--/Loader-->
+        
+        <div id="main" class="inside-page admin-page settings-page">
+            <div id="wrapper">
+                <header>
+                    <div class="container">
+                        <div class="top">
+                            <div class="flex-top flex">
+                                <div class="item select-block">
+                                    <div class="logo"><a href="#"><img src="img/logo.png" alt="Treemi.oi"/></a></div>
+                                    <div id="dep-block-language" class="b-selectblock ru">
+                                        <div id="selectblock-language" class="selectblock">                            
+                                            <div id="selectBox-language" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>Русский</span>
+                                                </p>
+                                                <ul id="selectMenuBox-language" class="selectMenuBox">
+                                                    <li class="option" id="ru">Русский</li>
+                                                    <li class="option" id="en">English</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightlanguage = $('#selectBox-language').height();
+                                            var rotateDefaultlanguage = "rotate(0deg)";
+                                                $('#selectBox-language > p.valueTag').click(function() {
+												  var currentHeightlanguage = $('#selectBox-language').height();
+                                                  if (currentHeightlanguage < 200 || currentHeightlanguage == selectDefaultHeightlanguage) {
+                                                      $('#selectBox-language').height("115px");
+                                                      $('#selectBox-language img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-language').addClass('open');
+                                                  }
+                                                  if (currentHeightlanguage >= 115) {
+                                                    $('#selectBox-language').height(selectDefaultHeightlanguage);
+                                                    $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+													$('#selectBox-language').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-language li.option').click(function() {
+                                                $('#dep-block-language').removeClass();
+                                                $('#selectblock-language').removeClass();
+                                                $('#selectBox-language').height(selectDefaultHeightlanguage);
+												$('#selectBox-language p.valueTag span').text($(this).text());
+                                                $('#selectBox-language img.arrow').css({transform: rotateDefaultlanguage});
+                                                
+                                                var clalanguage=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-language').addClass(clalanguage);
+                                                $('#selectblock-language').addClass(clalanguage);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                    <div id="dep-block-val" class="b-selectblock">
+                                        <div id="selectblock-val" class="selectblock">                            
+                                            <div id="selectBox-val" class="selectBox">
+                                                <img src="img/ico/arrow-black.png" alt="" class="arrow" />
+                                                <p class="valueTag" name="select">
+                                                    <span>USD</span>
+                                                </p>
+                                                <ul id="selectMenuBox-val" class="selectMenuBox">
+                                                    <li class="option" id="USD">USD</li>
+                                                    <li class="option" id="btn">btn</li>
+                                                </ul>
+                                            </div><!-- selectBox -->
+                                        </div><!-- #selectblock -->
+                                    </div><!-- .b-selectblock -->
+                                    <script>
+                                        (function( $ ){
+                                          $.fn.selectbox = function() {
+                                            var selectDefaultHeightval = $('#selectBox-val').height();
+                                            var rotateDefaultval = "rotate(0deg)";
+                                                $('#selectBox-val > p.valueTag').click(function() {
+												  var currentHeightval = $('#selectBox-val').height();
+                                                  if (currentHeightval < 200 || currentHeightval == selectDefaultHeightval) {
+                                                      $('#selectBox-val').height("115px");
+                                                      $('#selectBox-val img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+													  $('#selectBox-val').addClass('open');
+                                                  }
+                                                  if (currentHeightval >= 115) {
+                                                    $('#selectBox-val').height(selectDefaultHeightval);
+                                                    $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+													$('#selectBox-val').removeClass('open');
+                                                  }
+                                              });
+                                              
+                                              $('#selectBox-val li.option').click(function() {
+                                                $('#dep-block-val').removeClass();
+                                                $('#selectblock-val').removeClass();
+                                                $('#selectBox-val').height(selectDefaultHeightval);
+												$('#selectBox-val p.valueTag span').text($(this).text());
+                                                $('#selectBox-val img.arrow').css({transform: rotateDefaultval});
+                                                
+                                                var clalval=$(this).attr( 'id' );
+                                                
+                                                $('#dep-block-val').addClass(claval);
+                                                $('#selectblock-val').addClass(claval);
+                                              });
+                                          };
+                                        })( jQuery );
+                                        $('selector').selectbox();
+                                    </script>
+                                </div><!--/ item-->
+                                <nav id="menu">
+                                    <div class="cd-nav-trigger">
+                                        <div class="hamburger-menu">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>     
+                                        </ul>
+                                        <div class="admin-menu">
+                                            <ul>
+                                                <li><a href="#"><img src="img/admin/ico/speedometer.png" alt=""/><span>Dashboard</span></a></li>  
+                                                <li class="active"><a href="#"><img src="img/admin/ico/money-bag.png" alt=""/><span>Открыть депозит</span></a></li>     
+                                                <li><a href="#"><img src="img/admin/ico/payment-method.png" alt=""/><span>Вывести средства</span></a></li>    
+                                                <li><a href="#"><img src="img/admin/ico/icon.png" alt=""/><span>Партнерство</span></a></li>  
+                                                <li ><a href="#"><img src="img/admin/ico/settings-work-tool.png" alt=""/><span>Настройки</span></a></li>  
+                                                <!--<li><a href="#"><img src="img/admin/ico/gift.png" alt=""/><span>Получить бонус</span></a></li>--> 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--/ flex-top-->
+                            
+                            <div class="flex-bottom flex">
+                                <div class="social-networks">
+                                    <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                    <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                </div><!--/ social-networks-->
+                                <div class="btn-block">
+                                    <div class="btn reg"><span><img src="img/ico/reg.png" alt=""/></span>username_13512@gmail.com</div>
+                                    <a href="#" class="btn inter"><span><img src="img/ico/inter.png" alt=""/></span>Выход</a>
+                                </div>
+                            </div><!--/ flex-bottom-->
+                        </div><!--/ top-->
+                        
+                        <div class="admin-menu">
+                            <ul>
+                                <li><a href="#"><img src="img/admin/ico/speedometer.png" alt=""/><span>Dashboard</span></a></li>  
+                                <li class="active"><a href="#"><img src="img/admin/ico/money-bag.png" alt=""/><span>Открыть депозит</span></a></li>     
+                                <li><a href="#"><img src="img/admin/ico/payment-method.png" alt=""/><span>Вывести средства</span></a></li>    
+                                <li><a href="#"><img src="img/admin/ico/icon.png" alt=""/><span>Партнерство</span></a></li>  
+                                <li><a href="#"><img src="img/admin/ico/settings-work-tool.png" alt=""/><span>Настройки</span></a></li>  
+                                <!--<li><a href="#"><img src="img/admin/ico/gift.png" alt=""/><span>Получить бонус</span></a></li>--> 
+                            </ul>
+                        </div><!--/admin-menu-->
+                        
+                        <div id="ps-stat">
+                            <div class="flex">
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/btc.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/eth.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/ltc.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/dash.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/pm.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/payyer.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/payyer.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                                <div class="item">
+                                    <div class="img"><img src="img/admin/ps/qiwi.png" alt=""/></div>
+                                    <div class="txt">
+                                        <div class="tit">Bitcoin (BTC)</div>
+                                        <div class="number">0.00000000</div>
+                                    </div>
+                                </div><!--/item-->
+                            </div>
+                        </div><!--/ps-stat-->
+                    </div><!--/ container-->
+                </header>
+                
+                <div id="admin-body" class="main">
+                    <article id="open-deposit-page">
+                        <div class="container">
+                            <div class="a-body">
+                                <section class="admin-tab">
+                                    <div class="tab-block">
+                                        <ul class="tabs flex">
+                                            <li class="current">Открытие депозита</li>
+                                            <li>История депозитов</li>
+                                        </ul>
+                                        <div class="box visible">
+                                            <div id="profit-calculator" class="ananas-tree">
+                                                <div class="profit-calculator-flex">
+                                                    <div class="img">
+                                                        <img src="img/trees/Ananas.png" alt="" class="ananas-tree"/>
+                                                        <img src="img/trees/Apelsin.png" alt="" class="apelsin-tree"/>
+                                                        <img src="img/trees/Banan.png" alt="" class="banan-tree"/>
+                                                        <img src="img/trees/Granat.png" alt="" class="granat-tree"/>
+                                                        <img src="img/trees/Grapefruit.png" alt="" class="grapefruit-tree"/>
+                                                        <img src="img/trees/Grusha.png" alt="" class="grusha-tree"/>
+                                                        <img src="img/trees/Kiwi.png" alt="" class="kiwi-tree"/>
+                                                        <img src="img/trees/Limon.png" alt="" class="limon-tree"/>
+                                                        <img src="img/trees/Mandarin.png" alt="" class="mandarin-tree"/>
+                                                        <img src="img/trees/Mango.png" alt="" class="mango-tree"/>
+                                                        <img src="img/trees/Vinograd.png" alt="" class="vinograd-tree"/>
+                                                        <img src="img/trees/Yablona.png" alt="" class="yablona-tree"/>
+                                                    </div>
+                                                    <div class="left-block">
+                                                        <div class="tit">Открытие депозита</div>
+                                                        <div class="calculator">
+                                                            <form action="" method="post">
+                                                                <div class="item-form">
+                                                                    <label>Тип дерева:</label>
+                                                                    <div id="dep-block-tree" class="b-selectblock">
+                                                                        <div id="selectblock-tree" class="selectblock">                            
+                                                                            <div id="selectBox-tree" class="selectBox">
+                                                                                <img src="img/ico/arrow-select.png" alt="" class="arrow" />
+                                                                                <p class="valueTag" name="select">
+                                                                                    <span>Ананасовое дерево</span>
+                                                                                </p>
+                                                                                <ul id="selectMenuBox-tree" class="selectMenuBox">
+                                                                                    <li class="option" id="ananas-tree">Ананасовое дерево</li>
+                                                                                    <li class="option" id="apelsin-tree">Апельсиновое дерево</li>
+                                                                                    <li class="option" id="banan-tree">Банановое дерево</li>
+                                                                                    <li class="option" id="granat-tree">Гранатовое дерево</li>
+                                                                                    <li class="option" id="grapefruit-tree">Дерево Грейпфрута</li>
+                                                                                    <li class="option" id="grusha-tree">Грушевое дерево</li>
+                                                                                    <li class="option" id="kiwi-tree">Дерево Киви</li>
+                                                                                    <li class="option" id="limon-tree">Лимонное дерево</li>
+                                                                                    <li class="option" id="mandarin-tree">Мандариновое дерево</li>
+                                                                                    <li class="option" id="mango-tree">Дерево Манго</li>
+                                                                                    <li class="option" id="yablona-tree">Виноградное дерево</li>
+                                                                                    <li class="option" id="el-tree">Яблоня</li>
+                                                                                </ul>
+                                                                            </div><!-- selectBox -->
+                                                                        </div><!-- #selectblock -->
+                                                                    </div><!-- .b-selectblock -->
+                                                                    <script>
+                                                                        (function( $ ){
+                                                                          $.fn.selectbox = function() {
+                                                                            var selectDefaultHeighttree = $('#selectBox-tree').height();
+                                                                            var rotateDefaulttree = "rotate(0deg)";
+                                                                                $('#selectBox-tree > p.valueTag').click(function() {
+                                                                                  var currentHeighttree = $('#selectBox-tree').height();
+                                                                                  if (currentHeighttree < 200 || currentHeighttree == selectDefaultHeighttree) {
+                                                                                      $('#selectBox-tree').height("175px");
+                                                                                      $('#selectBox-tree img.arrow').css({borderRadius: "1000px", transition: ".2s", transform: "rotate(180deg)"});
+                                                                                  }
+                                                                                  if (currentHeighttree >= 175) {
+                                                                                    $('#selectBox-tree').height(selectDefaultHeighttree);
+                                                                                    $('#selectBox-tree img.arrow').css({transform: rotateDefaulttree});
+                                                                                  }
+                                                                              });
+                                                                              
+                                                                              $('#selectBox-tree li.option').click(function() {
+                                                                                $('#dep-block-tree').removeClass();
+                                                                                $('#selectblock-tree').removeClass();
+																				$('#profit-calculator').removeClass();
+                                                                                $('#selectBox-tree').height(selectDefaultHeighttree);
+                                                                                $('#selectBox-tree img.arrow').css({transform: rotateDefaulttree});
+                                                                                $('#selectBox-tree p.valueTag span').text($(this).text());
+                                                                                
+                                                                                var clatree=$(this).attr( 'id' );
+                                                                                
+                                                                                $('#dep-block-tree').addClass(clatree);
+                                                                                $('#selectblock-tree').addClass(clatree);
+																				$('#profit-calculator').addClass(clatree)
+                                                                              });
+                                                                          };
+                                                                        })( jQuery );
+                                                                        $('selector').selectbox();
+                                                                    </script>
+                                                                </div>
+                                                                
+                                                                <div id="currency-block">
+                                                                    <span id="usd">USD</span>
+                                                                    <span id="rub">RUB</span>
+                                                                    <span id="btc">BTC</span>
+                                                                    <span id="ltc">LTC</span>
+                                                                    <span id="eth">ETH</span>
+                                                                    <span id="dash">DASH</span>
+                                                                </div>
+                                                                <div class="item-2 item-flex">
+                                                                    <div class="item-form">
+                                                                        <label>Сумма инвестиций:</label>
+                                                                        <input type="text" class="input-form" id="c-input" placeholder="0"/> 
+                                                                    </div>
+                                                                    <div class="item-form">
+                                                                        <label>Ваша прибыль:</label>
+                                                                        <div class="profit-block">
+                                                                            <span id="profit">0$</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!--item-form-->
+                                                                <div class="btn btn-dep modal-block" id="usd-rub">
+                                                                    <span><img src="img/ico/give-money.png" alt=""></span>
+                                                                    <p>Посадить</p>
+                                                                </div>
+                                                            </form>
+                                                        </div><!--calculator-->
+                                                    </div>
+                                                </div>
+                                            </div><!--profit-calculator-->
+                                        </div><!--BOX 1-->
+                                        
+                                        <div class="box">
+                                           <div class="table">
+                                                <table>
+                                                    <tbody><tr>
+                                                        <th class="th-date">Дата и время</th>
+                                                        <th class="th-ps">П/С</th>
+                                                        <th class="th-num">№ кошелька</th>
+                                                        <th class="th-sum">Сумма:</th>
+                                                        <th class="th-status">Статус:</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status success"><span>Успех</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status error"><span>Ошибка</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status cancel"><span>Отмена</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status success"><span>Успех</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status error"><span>Ошибка</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-date">11.12.2018 в 11.30</td>
+                                                        <td class="td-ps">BitcoinCash</td>
+                                                        <td class="td-num">US-1293012845125</td>
+                                                        <td class="td-sum">0.214532146 BCH</td>
+                                                        <td class="td-status cancel"><span>Отмена</span></td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </div>
+                                        </div><!--BOX 2-->
+                                    </div>
+                                </section>
+                            </div><!--/a-body-->
+						</div><!--container-->
+                    </article>
+                    
+                    
+                    <footer>
+                        <div class="ps-block">
+                            <div class="container">
+                                <div class="flex">
+                                    <div class="img"><img src="img/ps/pay-payeer.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-pm.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-nix.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-qiwi.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-btc.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-eth.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-dash.png" alt="" /></div>
+                                    <div class="img"><img src="img/ps/pay-ltc.png" alt="" /></div>
+                                </div>
+                            </div><!--container-->
+                        </div><!--ps-block-->
+                        
+                        <div class="scrolltop">
+                        	<div id="toTop"><span class="a-arrow"><img src="img/ico/arrow-white.png" alt=""/></span></div>
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </div>
+                        
+                        <div class="footer-block">
+                            <div class="container">
+                                <div class="top flex">
+                                    <div class="logo"><a href="#"><img src="img/logo-white.png" alt="Treemi.oi"/></a></div>
+                                    <div class="social-networks">
+                                        <a href="#"><img src="img/soc-ico/mail.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/skype.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/tg.png" alt=""/></a>
+                                        <a href="#"><img src="img/soc-ico/vk.png" alt=""/></a>
+                                    </div><!--/ social-networks-->
+                                </div>
+                                <nav id="menu">
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="#">Главная</a></li>    
+                                            <li><a href="#">Инструкция</a></li>      
+                                            <li><a href="#">Отзывы</a></li>   
+                                            <li><a href="#">Статистика </a></li>     
+                                            <li><a href="#">Контакты</a></li>  
+                                        </ul>
+                                    </div>
+                                </nav><!--/menu-->
+                            </div><!--container-->
+                            <div class="bottom">
+                                <div class="container">
+                                    <div class="flex">
+                                        <div class="copyright">© 2018-2020  Инвестици с Treemi.io</div>
+                                        <div class="other-doc"><a href="#">Политика конфиденциальности</a>      <span>•</span>     <a href="#">Условия сотрудничества</a></div>
+                                    </div>
+                                </div><!--container-->
+                            </div>
+                        </div>
+                    </footer>
+            	</div>
+            </div><!-- End #wrapper --> 
+        </div><!--/Main-->
+       
+       <div class="modal hidden deposit-modal" data-id="#btc-ltc-eth-dash">
+        <div class="modal-ov"></div>
+            <div class="modal-content">
+                <div class="close"><span><img src="img/ico/close.png" alt=""></span></div>
+                <div class="body-mod">
+                    <div class="title-block">
+                        <h2>ПОДТВЕРДИТЕ ОПЛАТУ</h2>
+                    </div>
+                    <p>Платеж будет зачислен после трех подтверждений в сети</p>
+                    <div class="input-block">     
+                        <div class="title">Сумма:</div>
+                        <span>16 333,66 USD</span> 
+                    </div> 
+                    <div class="input-block">     
+                         <div class="title">Платежная система:</div>
+                         <span><img src="img/admin/ps/btc.png" alt=""/>Bitcoin</span>
+                    </div> 
+                    <div class="input-block">     
+                        <div class="title">Время создания:</div>
+                        <span>12:30</span>
+                    </div>
+                    <div class="purse">     
+                        <div class="title">Необходим перевод на кошелек</div>
+                        <span>k273jas038fjsk273jas038fjs</span>
+                    </div>  
+                    <a href="#" class="btn">Я ОПЛАТИЛ</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal hidden deposit-modal" data-id="#usd-rub">
+            <div class="modal-ov"></div>
+            <div class="modal-content">
+                <div class="close"><span><img src="img/ico/close.png" alt=""></span></div>
+                <div class="body-mod">
+                    <div class="title-block">
+                        <h2>ПОДТВЕРДИТЕ ОПЛАТУ</h2>
+                    </div>
+                    <p>Платеж будет зачислен после трех подтверждений в сети</p>
+                    <div class="input-block">     
+                        <div class="title">Сумма:</div>
+                        <span>16 333,66 USD</span> 
+                    </div> 
+                    <div class="input-block">     
+                         <div class="title">Платежная система:</div>
+                         <span><img src="img/admin/ps/pm.png" alt=""/>P.Money</span>
+                    </div> 
+                    <div class="input-block">     
+                        <div class="title">Время создания:</div>
+                        <span>12:30</span>
+                    </div>
+                    <a href="#" class="btn">ПЕРЕЙТИ К ОПЛАТЕ</a>
+                </div>
+            </div>
+        </div>
+       
+	   <script type="text/javascript" src="js/main-a.js"></script>  
+       
+	</body>
+</html>
